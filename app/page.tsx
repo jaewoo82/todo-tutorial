@@ -13,6 +13,9 @@ export default function Page() {
       <div className="flex w-full max-w-md min-w-0 flex-col gap-6">
         <div>
           {title}
+          <p className="text-sm text-muted-foreground">
+            오늘 할 일을 가볍게 정리해봐요
+          </p>
           <p className="font-mono text-xs text-muted-foreground">
             (Press <kbd>d</kbd> to toggle dark mode)
           </p>
