@@ -20,6 +20,9 @@ interface TodoItemProps {
   onEdit: (id: string, text: string) => void;
 }
 
+const BADGE_CLASS =
+  "shrink-0 rounded-full border px-2 py-0.5 text-[0.625rem] font-medium leading-none";
+
 export function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(todo.text);
@@ -99,22 +102,12 @@ export function TodoItem({ todo, onToggle, onDelete, onEdit }: TodoItemProps) {
       )}
 
       {category && (
-        <span
-          className={cn(
-            "shrink-0 rounded-full border px-2 py-0.5 text-[0.625rem] font-medium leading-none",
-            category.badgeClass
-          )}
-        >
+        <span className={cn(BADGE_CLASS, category.badgeClass)}>
           {category.label}
         </span>
       )}
 
-      <span
-        className={cn(
-          "shrink-0 rounded-full border px-2 py-0.5 text-[0.625rem] font-medium leading-none",
-          priority.badgeClass
-        )}
-      >
+      <span className={cn(BADGE_CLASS, priority.badgeClass)}>
         {priority.label}
       </span>
 
